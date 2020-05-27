@@ -14,7 +14,7 @@ namespace Sprite0.Command
 
         public CommandUpDown(Game1 game)
         {
-            Game = game;
+            Game = game ;
         }
         
         public void Execute()
