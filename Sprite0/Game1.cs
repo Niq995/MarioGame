@@ -65,7 +65,6 @@ namespace Sprite0
             // Create a new SpriteBatch, which can be used to draw textures.
             // 初始化画笔
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
             
 
             // Create four different texture2D for sprite / 四钟不同的sprite
