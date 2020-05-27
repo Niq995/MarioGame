@@ -14,12 +14,10 @@ namespace Sprite0.Command
         {
             Game = game;
         }
-
-
-
+        
         public void Execute()
         {
-            Game.sprite = new StaticSprite(Game.MarioStandRight);
+            Game.sprite = new SpriteStatic(Game.MarioStandRight);
         }
     }
 }

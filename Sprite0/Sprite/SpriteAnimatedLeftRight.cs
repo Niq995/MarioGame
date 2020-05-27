@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sprite0.Sprite
 {
-    class AnimatedSpriteLeftRight : ISprite
+    class SpriteAnimatedLeftRight : ISprite
     {
         public Texture2D Texture { get; set; }
         //the number of rows and columns in the texture atlas
@@ -21,7 +21,7 @@ namespace Sprite0.Sprite
        // int width;
 
         //Constructor
-        public AnimatedSpriteLeftRight(Texture2D texture, int rows, int columns, Vector2 loc)
+        public SpriteAnimatedLeftRight(Texture2D texture, int rows, int columns, Vector2 loc)
         {
             Texture = texture;
             Rows = rows;
@@ -33,7 +33,7 @@ namespace Sprite0.Sprite
 
         public void Update()
         {
-            location.X=location.X -3;
+            location.X=location.X -2;
             if (location.X < 0)
                 location.X = 500;
 
@@ -55,8 +55,6 @@ namespace Sprite0.Sprite
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, this.location, sourceRectangle, Color.White);
             spriteBatch.End();
-
-            //spriteBatch.Draw()
 
         }
     }

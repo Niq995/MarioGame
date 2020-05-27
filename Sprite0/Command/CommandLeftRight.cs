@@ -19,7 +19,7 @@ namespace Sprite0.Command
 
         public void Execute()
         {
-            Game.sprite = new AnimatedSpriteLeftRight(Game.MarioRunLeft,4,4,new Vector2 (400,200));
+            Game.sprite = new SpriteAnimatedLeftRight(Game.MarioRunLeft,4,4,new Vector2 (400,200));
         }
     }
 }

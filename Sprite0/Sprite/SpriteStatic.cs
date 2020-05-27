@@ -9,13 +9,13 @@ using Sprite0.Sprite;
 
 namespace Sprite0
 {
-    class StaticSprite : ISprite
+    class SpriteStatic : ISprite
     {
         public Texture2D Texture { get; set; } //表示该属性可以获取和设置
-        //public int Columns;
+        //Vector2 location;
 
         //Constructor
-        public StaticSprite(Texture2D texture)
+        public SpriteStatic(Texture2D texture)
         {
             Texture = texture;
             //Columns = columns;

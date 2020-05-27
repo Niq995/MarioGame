@@ -22,19 +22,12 @@ namespace Sprite0
         public Texture2D MarioStandLeft;
         public Texture2D MarioRunLeft;
 
-
-        public ISprite sprite; //执行命令的sprite
-
-        public IController GameKeyboard; //遥控器
+        //执行命令的sprite
+        public ISprite sprite; 
+        //遥控器
+        public IController GameKeyboard; 
         
-
-
-        //public StaticSprite staticSprite;
-        //public AnimatedSprite animatedSprite;
-       // public StaticSpriteUpdown staticSpriteUpdown;
-       // public AnimatedSpriteLeftRight animatedSpriteLeftRight;
-
-        Vector2 leftRightSpriteLocation; 
+        //Vector2 leftRightSpriteLocation; 
        
 
 
@@ -43,7 +36,7 @@ namespace Sprite0
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            leftRightSpriteLocation = new Vector2(400, 200);
+            //leftRightSpriteLocation = new Vector2(400, 200);
         }
 
         /// <summary>
@@ -70,17 +63,19 @@ namespace Sprite0
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
+            // 初始化画笔
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //给四个texture2D初始赋值
+            // Create four different texture2D for sprite / 四钟不同的sprite
             MarioStandRight = Content.Load<Texture2D>("Image/MarioStandRight");
             MarioRunRight = Content.Load<Texture2D>("Image/MarioRunRight");
             MarioStandLeft = Content.Load<Texture2D>("Image/MarioStandLeft");
             MarioRunLeft = Content.Load<Texture2D>("Image/MarioRunLeft");
-            //sprite赋予初始值
-            sprite = new StaticSprite(MarioStandRight);
+            // Initialize sprite / sprite赋予初始值
+            sprite = new SpriteStatic(MarioStandRight);
 
-            //键盘遥控器初始化+link commands into dictionary
+            // Initialize keyboardController and link <ControllerKeyboard, CommandObject>
+            // 初始化键盘控制器 + 将键盘按键和命令对象联系起来
             GameKeyboard = new ControllerKeyboard();
             GameKeyboard.SetCommand(this);
             
@@ -97,9 +92,9 @@ namespace Sprite0
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
-        }
 
+        }
+        
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -110,22 +105,19 @@ namespace Sprite0
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            GameKeyboard.Update();
+            /// gameGamePad.Update();
+            sprite.Update();
 
             base.Update(gameTime);
 
-            KeyboardState keyboardstate = Keyboard.GetState();
-            if (keyboardstate.IsKeyDown(Keys.D0))
-                Exit();
-
-            GameKeyboard.Update();
-           /// gameGamePad.Update();
-            sprite.Update();
-
+            //KeyboardState keyboardstate = Keyboard.GetState();
+            //if (keyboardstate.IsKeyDown(Keys.D0))
+               // Exit();
 
             // animatedSprite.Update();
             // staticSpriteUpdown.Update();
-            //  animatedSpriteLeftRight.Update();
+            // animatedSpriteLeftRight.Update();
 
 
             //if (keyboardstate.IsKeyDown(Keys.D1))
@@ -150,7 +142,9 @@ namespace Sprite0
             //spriteBatch.Begin();
 
             //spriteBatch.Draw(background, new Vector2(450, 240), Color.White);
-            sprite.Draw(spriteBatch, leftRightSpriteLocation);
+            sprite.Draw(spriteBatch);
+
+            
 
             //spriteBatch.End();
             base.Draw(gameTime);

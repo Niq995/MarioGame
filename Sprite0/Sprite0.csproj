@@ -47,16 +47,17 @@
     <Compile Include="Command\CommandResting.cs" />
     <Compile Include="Command\CommandUpDown.cs" />
     <Compile Include="Command\ICommand.cs" />
-    <Compile Include="Sprite\AnimatedSprite.cs" />
+    <Compile Include="Controller\Interface1.cs" />
+    <Compile Include="Sprite\SpriteAnimated.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Controller\ControllerKeyboard.cs" />
-    <Compile Include="Sprite\AnimatedSpriteLeftRight.cs" />
+    <Compile Include="Sprite\SpriteAnimatedLeftRight.cs" />
     <Compile Include="Sprite\ISprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sprite\StaticSprite.cs" />
-    <Compile Include="Sprite\StaticSpriteUpdown.cs" />
+    <Compile Include="Sprite\SpriteStatic.cs" />
+    <Compile Include="Sprite\SpriteStaticUpdown.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
