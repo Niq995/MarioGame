@@ -47,7 +47,6 @@
     <Compile Include="Command\CommandResting.cs" />
     <Compile Include="Command\CommandUpDown.cs" />
     <Compile Include="Command\ICommand.cs" />
-    <Compile Include="Controller\Interface1.cs" />
     <Compile Include="Sprite\SpriteAnimated.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Controller\IController.cs" />
