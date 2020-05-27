@@ -27,7 +27,7 @@ namespace Sprite0
         //遥控器
         public IController GameKeyboard; 
         
-        //Vector2 leftRightSpriteLocation; 
+        Vector2 Location; 
        
 
 
@@ -36,7 +36,7 @@ namespace Sprite0
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            //leftRightSpriteLocation = new Vector2(400, 200);
+            Location = new Vector2(400, 200);
         }
 
         /// <summary>
@@ -65,6 +65,8 @@ namespace Sprite0
             // Create a new SpriteBatch, which can be used to draw textures.
             // 初始化画笔
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            
 
             // Create four different texture2D for sprite / 四钟不同的sprite
             MarioStandRight = Content.Load<Texture2D>("Image/MarioStandRight");
@@ -142,7 +144,7 @@ namespace Sprite0
             //spriteBatch.Begin();
 
             //spriteBatch.Draw(background, new Vector2(450, 240), Color.White);
-            sprite.Draw(spriteBatch);
+            sprite.Draw(spriteBatch, Location);
 
             
 
